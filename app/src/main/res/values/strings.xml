@@ -7,10 +7,10 @@
     </string-array>
 
     <string-array name="exercises">
-        <item>Bench Press</item>
-        <item>Squats</item>
-        <item>Deadlifts</item>
-        <item>Shoulder Press</item>
+        <item>Жим лёжа</item>
+        <item>Присед</item>
+        <item>Становая тяга</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

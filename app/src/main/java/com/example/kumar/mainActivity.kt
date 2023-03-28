@@ -21,6 +21,11 @@ class mainActivity : AppCompatActivity() {
         journalButton.setOnClickListener {
             GoJournal()
         }
+
+        val mapButton: Button = findViewById(R.id.mapButton)
+        journalButton.setOnClickListener {
+            GoMap()
+        }
     }
 
     private fun GoInfo()
@@ -37,7 +42,7 @@ class mainActivity : AppCompatActivity() {
 
     private fun GoMap()
     {
-        val intent = Intent(this, infoActivity::class.java)
+        val intent = Intent(this, mapsActivity::class.java)
         startActivity(intent)
     }
 }

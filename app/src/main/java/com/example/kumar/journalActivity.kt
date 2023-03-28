@@ -19,8 +19,6 @@ class journalActivity : AppCompatActivity() {
 
     private var prevExercise: List<Exercise> = emptyList()
 
-    private val exercises = arrayOf("Жим лежа", "Приседания", "Тяга штанги")
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +29,6 @@ class journalActivity : AppCompatActivity() {
         weightEditText = findViewById(R.id.weight_editText)
         addButton = findViewById(R.id.add_button)
         resultsTextView = findViewById(R.id.textView1)
-
-
 
         addButton.setOnClickListener { addResult() }
     }
@@ -50,35 +46,20 @@ class journalActivity : AppCompatActivity() {
         editor.putBoolean(key, true)
         editor.apply()
 
-
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
-        val layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
 
-        val exercise: Exercise = Exercise(exerciseText, reps, weight)
+        val exercise = Exercise(exerciseText, reps, weight)
 
         prevExercise = prevExercise + exercise
 
+        // Создайте адаптер
         val adapter = ExerciseAdapter(prevExercise)
+
+        // Привяжите адаптер к RecyclerView
         recyclerView.adapter = adapter
 
-        displayResults()
-    }
-
-    private fun displayResults() {
-        weightEditText.text.clear()
-        repsEditText.text.clear()
-
-
-
-        val sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-        val allEntries = sharedPreferences.all
-
-        var resultsString = "Результаты:\n"
-        for ((key, value) in allEntries) {
-            if (value == true) {
-                resultsString += "$key\n"
-            }
-        }
+        // Установите менеджер макета
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
     }
 }
