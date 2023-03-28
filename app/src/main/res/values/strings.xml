@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Kumar</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exercises">
+        <item>Bench Press</item>
+        <item>Squats</item>
+        <item>Deadlifts</item>
+        <item>Shoulder Press</item>
+    </string-array>
+
+</resources>
