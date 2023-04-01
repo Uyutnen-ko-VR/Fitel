@@ -1,4 +1,4 @@
-package com.example.kumar
+package com.company.fitel
 
 import android.app.Activity
 import android.graphics.Bitmap

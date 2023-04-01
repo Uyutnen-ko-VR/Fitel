@@ -1,4 +1,4 @@
-package com.example.kumar
+package com.company.fitel
 
 import Exercise
 import ExerciseAdapter
